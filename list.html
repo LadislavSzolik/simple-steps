@@ -1,0 +1,11 @@
+<h4>Steps:</h4>
+    <div ng-controller="stepListController as stepList">
+      <ul class="unstyled">
+        <li ng-repeat="step in stepList.steps" >
+          <label class="checkbox" >
+            <input type="checkbox" ng-model="step.done">
+            <span class="done-{{step.done}}">{{step.text}}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
