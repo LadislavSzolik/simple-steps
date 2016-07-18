@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Steps</title>
+    <meta name="description" content="">
+    <meta name="author" content="Ladislav Szolik">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  </head>
+  <body ng-app="simpleStepApp">
+    <div class="ng-view">   </div>
+
+    <script>
+      //<script src="./app.js"></script>
+      require('./app.js')
+      require('./renderer.js')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "simple-steps",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LadislavSzolik/simple-steps.git"
+  },
+  "author": "Ladislav Szolik",
+  "devDependencies": {
+    "electron-packager": "^7.3.0",
+    "electron-prebuilt": "^1.2.0"
+  }
+}
