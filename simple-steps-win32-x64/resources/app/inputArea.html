@@ -1,6 +1,7 @@
 <div ng-controller="textAreaController">
 <h1>Input here:</h1>
-<textarea class="form-control" rows="4" ng-model="steps.textInput" ng-list="&#10;" ng-trim="false">
+<textarea class="form-control" ng-model="steps.textInput" ng-list="&#10;" ng-trim="false" rows="10" placeholder="Text here">
+
 </textarea>
 <br/>
 <a class="btn btn-success" href="#/list" ng-click="runButton()">Run</a>
