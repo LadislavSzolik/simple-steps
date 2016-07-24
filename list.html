@@ -9,7 +9,7 @@
             <input type="checkbox" ng-model="step.done" style=" width:30px; height: 25px;">
           </td>
           <td valign="top" width="70%">
-            <div  style="font-size: 16px; padding: 5px" contenteditable="true" ng-model="step.text">{{step.text}}</div>
+            <div  style="font-size: 16px; padding: 5px"  ng-bind-html="step.text">{{step.text}}</div>
           </td>
           <td valign="top" width="20%">
             <button  ng-click="copyText(step.text)" type="button" class="btn btn-default" >Copy</button>
@@ -19,7 +19,7 @@
       </table>
       <br/>
 
-      <a  class="btn btn-default" href="#/inputArea" ng-click="backButton()" >Back</a>
+      <a  class="btn btn-default" href="#/inputArea" ng-click="backButton()" >Edit steps</a>
     </div>
 </div>
 

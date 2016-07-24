@@ -1,8 +1,11 @@
 const clipboard = require('electron').clipboard
+var fs = require('fs');
 
-var simpleStepApp = angular.module('simpleStepApp', ['ngRoute']);
+var simpleStepApp = angular.module('simpleStepApp', ['ngRoute', 'hc.marked','ngSanitize']);
 
-simpleStepApp.config(['$routeProvider', function($routeProvider){
+simpleStepApp.config(['$routeProvider','markedProvider', function($routeProvider, markedProvider){
+  markedProvider.setOptions({gfm: true});
+
   $routeProvider.when('/inputArea', {
     templateUrl: 'inputArea.html'
   })
@@ -13,10 +16,12 @@ simpleStepApp.config(['$routeProvider', function($routeProvider){
   });
 }]);
 
-simpleStepApp.controller('textAreaController',['$scope','simpleStapService', function($scope, simpleStapService){
+simpleStepApp.controller('textAreaController',['$scope','simpleStapService', 'marked', function($scope, simpleStapService, marked){
 
   $scope.steps = {textInput : simpleStapService.getInputText()};
 
+  // img example
+  //$scope.testText = marked("![an image](/Users/ladislavszolik/Pictures/me.png)");
 
   $scope.runButton = function() {
     simpleStapService.saveSteps($scope.steps.textInput);
@@ -30,9 +35,7 @@ simpleStepApp.controller('stepListController', ['$scope', 'simpleStapService', f
     var stepList = this;
     stepList.steps = simpleStapService.getSteps();
 
-    $scope.backButton = function() {
-      simpleStapService.updateSteps(stepList.steps);
-    }
+    // $scope.backButton = function() { simpleStapService.updateSteps(stepList.steps);}
 
     $scope.copyText = function(stepText) {
       clipboard.writeText(stepText);
@@ -40,7 +43,7 @@ simpleStepApp.controller('stepListController', ['$scope', 'simpleStapService', f
 
   }]);
 
-  simpleStepApp.service('simpleStapService', function() {
+  simpleStepApp.service('simpleStapService', ['marked', function(marked) {
     this.inputText = [];
     this.steps = [];
 
@@ -53,7 +56,7 @@ simpleStepApp.controller('stepListController', ['$scope', 'simpleStapService', f
 
     this.tranformTextAreaToObjects = function() {
       for(step in this.inputText) {
-        this.steps.push({text:this.inputText[step], done:false});
+        this.steps.push({text: marked(this.inputText[step]), done:false});
       }
 
     }
@@ -78,7 +81,7 @@ simpleStepApp.controller('stepListController', ['$scope', 'simpleStapService', f
       return this.steps;
     }
 
-});
+}]);
 
 simpleStepApp.directive("contenteditable", function() {
   return {
