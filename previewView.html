@@ -1,0 +1,22 @@
+<div ng-controller="previewViewController">
+  <a href="#/startView">< Menu</a>
+  <h1>New Checklist</h1>
+
+    <a href="#/editView" class="btn btn-default">Edit</a>
+    <a href="#/previewView" class="btn btn-primary">Preview</a>
+<div class="items-container">
+  <ul class="list-unstyled">
+    <li ng-repeat="item in objectList">
+      <div>
+        <div class="item-holder" ng-click="toggleDone($index)" ng-class="{'done-field': item.done }">
+          {{item.text}}
+        </div>
+        <button type="button" class="btn btn-default copy-item">Copy</button>
+      </div>
+    
+    </li>
+  </ul>
+
+</div>
+
+</div>

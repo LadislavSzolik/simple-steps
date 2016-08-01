@@ -1,8 +1,9 @@
-html {
+body {
   font-family: 'Open Sans' !important;
-  width: 600px;
+  width: 900px;
   margin: auto auto;
   padding: 30px;
+  background-color: #FCFCFC;
 }
 
 table {
@@ -20,4 +21,40 @@ button:focus {
 
 span {
   outline: 0 !important;
+}
+
+.input-field {
+  width: 850px;
+  height: 350px;
+  border: 1px solid #007AFF;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 18px;
+  color: #333333;
+}
+
+.items-container {
+  width: 850px;
+  margin-top: 20px;
+}
+
+.item-holder {
+  border: 1px solid #007AFF;
+  border-radius: 3px;
+  padding: 20px;
+  width: 750px;
+  font-size: 18px;
+  color: #333333;
+  float: left;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+
+.done-field {
+  background-color: rgba(80, 216, 104, 0.4);
+}
+
+.copy-item {
+  margin-left: 25px;
 }
