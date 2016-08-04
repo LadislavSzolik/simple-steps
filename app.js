@@ -15,9 +15,7 @@ simpleStepApp.config(['$routeProvider','markedProvider', function($routeProvider
   .when('/previewView', {
     templateUrl: 'previewView.html'
   })
-  .when('/list', {
-    templateUrl: 'list.html'
-  }).otherwise({
+  .otherwise({
     redirectTo: '/startView'
   });
 }]);
@@ -52,7 +50,7 @@ simpleStepApp.controller('previewViewController',['$scope', 'simpleStapService',
 
   simpleStepApp.service('simpleStapService', ['marked', function(marked) {
 
-    this.inputContent = "[] todo [] todo [] todo" ;
+    this.inputContent = "[] todo [] todo [x] todo" ;
     this.rawList;
     this.objectList;
 
