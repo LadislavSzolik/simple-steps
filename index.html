@@ -18,7 +18,19 @@
   </head>
   <body ng-app="simpleStepApp">
     <div class="ng-view center-block">   </div>
-    <script src="./app.js"></script>
+
+    <!-- app -->
+    <script src="app/app.route.js"></script>
+
+    <!-- start -->
+
+    <!-- preview -->
+    <script src="app/components/preview/previewController.js"></script>
+    <script src="app/components/preview/previewService.js"></script>
+
+    <!-- edit -->
+    <script src="app/components/edit/editController.js"></script>
+
     <script>
       //require('./renderer.js')
     </script>
