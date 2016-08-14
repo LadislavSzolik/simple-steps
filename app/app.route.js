@@ -1,4 +1,4 @@
-angular.module('simpleStepApp', ['previewModule','editModule','ngRoute', 'hc.marked','ngSanitize'])
+angular.module('simpleStepApp', ['startModule','previewModule','editModule','ngRoute', 'hc.marked','ngSanitize'])
 
 .config(['$routeProvider','markedProvider', function($routeProvider, markedProvider){
   markedProvider.setOptions({gfm: true});
