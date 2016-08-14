@@ -1,0 +1,14 @@
+{
+  "list": [
+    {
+      "text": "todo1",
+      "status": "[ ]",
+      "done": false
+    },
+    {
+      "text": "todo2",
+      "status": "[ ]",
+      "done": false
+    }
+  ]
+}
