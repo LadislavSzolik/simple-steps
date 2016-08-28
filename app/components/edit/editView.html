@@ -1,11 +1,39 @@
 <div ng-controller="editController">
+  <!-- http://www.w3schools.com/bootstrap/bootstrap_navbar.asp -->
+  <!-- http://work.smarchal.com/twbscolor/ -->
+
+  <nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Save</a></li>
+          <li><a href="#">Preview</a></li>
+          <li><a href="#">Start page</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Save execution</a></li>
+    </ul>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">New checklist</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><label class="radio-inline"><input type="radio" name="ordered"> Ordered list &nbsp;</label></li>
+    </ul>
+  </nav>
+<!--
   <a href="#/startView">< Menu</a>
   <h1>New Checklist</h1>
 
   <a href="#/editView" class="btn btn-primary">Edit</a>
   <a href="#/previewView" class="btn btn-default" ng-click="convert()">Preview</a>
-
+-->
   <textarea class="input-field" ng-model="inputContent">
   </textarea>
+  
+  <form action="hashtags">
+    <div class="col-xs-8"><input type="text" name="hashtags" class="input-full-width" placeholder="Type your hashtags here like: Install, Grocery, etc"></div>
+    <div class="col-xs-4"><input type="submit" class="btn btn-info pull-right" value="Run"></div>
+  </form>
 
 </div>
