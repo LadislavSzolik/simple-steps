@@ -13,3 +13,4 @@ simple-steps-darwin-x64/
 simple-steps-win32-x64/
 node_modules/
 bower_components/
+bower_components/angular-route/.bower.json
